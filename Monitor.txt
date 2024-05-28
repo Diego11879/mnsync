@@ -1,0 +1,13 @@
+Monitor y Sincronizador de Directorios
+
+Tarea: Vigilar un directorio específico y registrar cualquier cambio que ocurra.
+       Estos cambios pueden ser la creación, eliminación o modificación de 
+       archivos. Luego el usuario podrá optar a sincronizar el primer directorio 
+       (monitorizado) con un segundo directorio que puede ser un dispositivo 
+       externo.
+
+Uso: Se realizarán cambios en un directorio por el usuario, luego se seleccionará
+     un segundo directorio en el cual se agregarán, cambiarán o eliminarán archivos
+     con el fin de que este segundo sea una copia exacta del primero.
+
+Compatibilidad: Estará pensado para ser utilizado en dispositivos gnu-linux.     
