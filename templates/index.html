@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script>
+        function fetchStatus() {
+            fetch('/status')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('status').innerText = data.status;
+                    const icon = document.getElementById('sync-icon');
+                    if (data.status === 'sincronizando') {
+                        icon.classList.add('rotating');
+                    } else {
+                        icon.classList.remove('rotating');
+                    }
+                });
+        }
+
+        setInterval(fetchStatus, 5000); // Actualiza el estado cada 5 segundos
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Panel de Control</h1>
+        <p>Estado del programa: <span id="status">Cargando...</span></p>
+        <div id="sync-icon" class="sync-icon">
+            &#8635; 
+        </div>
+    </div>
+</body>
+</html>
+
+
